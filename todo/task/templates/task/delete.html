@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+	body{
+		background-color:rgba(255, 0, 0, 0.247);  
+	}
+    input{
+		width: 50%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		box-sizing: border-box;
+	}
+    .center-column{
+		width:500px;
+		margin: 20px auto;
+		padding:20px;
+		background-color: #fff;
+		border-radius: 3px;
+		box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.75);
+	}
+    .item-row{
+		background-color: #e7657b;
+		margin: 10px;
+		padding: 20px;
+		border-radius: 3px;
+		color: #fff;
+		font-size: 16px;
+		box-shadow: 0px -1px 10px -4px rgba(0,0,0,0.75);
+	}
+    .submit{
+		background-color: #39dcf1;
+        border-color: #39dcf1;
+	}
+    #abc{
+        font-size: 30px;
+        text-decoration: none;
+        border: 1px solid #39dcf1;
+        padding: 5px;
+        background-color: #39dcf1;
+    }
+</style>
+
+<div class="center-column">
+    <h2 style="color: brown; padding: 10px; padding-bottom: 20px !important;">Are you sure you want to delete <i>{{item}}?</i> </h2>
+    <a href="{% url 'list' %}" id="abc">Cancel</a>
+    <form action="" method="POST">
+        {% csrf_token %}
+       <input type="submit" name="Confirm" class="submit"> 
+    </form>
+</div>
